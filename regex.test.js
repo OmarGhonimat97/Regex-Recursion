@@ -19,7 +19,8 @@ which end with io (example@example.io) */
 function ioEmail(email){
     // Add your logic.
     // let regex2 = /[a-z0-9]+@[a-z]/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g ;
-   let regex2 =  /[a-z0-9]+@[a-z]/
+//    let regex2 =  /[a-z0-9]+@[a-z]/
+let regex2 = /example@example.io/g;
     let res2 = regex2.test(email) ;
     return res2;
 }
