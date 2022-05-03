@@ -18,11 +18,18 @@ which end with io (example@example.io) */
 
 function ioEmail(email){
     // Add your logic.
-    // let regex2 = /[a-z0-9]+@[a-z]/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g ;
-//    let regex2 =  /[a-z0-9]+@[a-z]/
+        // let regex2 = /[a-z0-9]+@[a-z]/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g ;
+//    let regex2 =  /^(?!.*[kpKP])[a-zA-Z]+@[]/g ;
 let regex2 = /example@example.io/g;
-    let res2 = regex2.test(email) ;
-    return res2;
+// let regex2 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+// let regex2 = /^(([^<>()[\]\,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[.io\b]{2,})$/i ;
+// let regex2  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/  || /^\S+@\S+\.\S+$/ || /(io)\b/g ;
+// let regex2 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+// let regex2 =  /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g
+// let regex2 = /^[\w.][^@.]+@([\w-]+.)+[\w-]{2}(.io)?$/gm ;
+let res = regex2.test(email); 
+return res;
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -35,12 +42,32 @@ function imagesSearcher(text){
     // let regex1 = / (\w+.jpg)(\b)/gi ;
     // let regex2 = / (\w+.jpeg)(\b)/gi ;
     // let regex3 = / (\w+.png)(\b)/gi ;
-    let regex = /(\w+jpg)(\b) | (\w+jpeg)(\b) | (\w+png)(\b)/gi;
+    // let regex = [ / (\w+.jpg)(\b)/gi  || / (\w+.jpeg)(\b)/gi || / (\w+.png)(\b)/gi ] ;
+    // let regex =/([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif)$/
+    let regex =(/[\w\.\$]+(?=png|jpg|jpeg)\w+/g)
+
+//     let res1 = text.match(regex1);
+//     let res2 = text.match(regex2);
+//     let res3 = text.match(regex3);
+//     let rege = res3.concat(res1,res2);
+//    arr.push(rege);
+// let res1= text.match(regex)
+// arr.push(res1)
+    // arr.push(res2);
+    // arr.push(res3);
+    let textArr = text.split(" ");
+    for (let i = 0; i < textArr.length; i++) {
+        let word = textArr[i];
+        // if (regex1.test(word) == true ||  regex2.test(word) == true ||  regex3.test(word) ==true) {
+            if (regex.test(word) == true) {
+            arr.push(word);
+        } 
+        // else {
+        //     return arr
+        // }
+    }
  
-    let res = text.match(regex);
-    arr.push(res);
-    
-        return arr;
+    return arr;
     }
     
 //     if (arr.length == 0) {

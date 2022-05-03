@@ -66,15 +66,15 @@ Input: n = 3, k = 3
 Output: ["123", "132", "213", "231", "312", "321"] */
 
 function permutations(n,k){
-    let arr = [];
-    if (n==0 || K==0) {
-        return [];
-    }
-    for (let i = 0; i < k; i++) {
-        currntNum = k;
-        remainingNums = k.
-        ""
-    }
+    // let arr = [];
+    // if (n==0 || K==0) {
+    //     return [];
+    // }
+    // for (let i = 0; i < k; i++) {
+    //     currntNum = k;
+    //     remainingNums = k.
+    //     ""
+    // }
 
     // Write you logic here. 
     return arr
