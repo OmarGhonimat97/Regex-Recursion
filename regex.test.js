@@ -20,7 +20,7 @@ function ioEmail(email){
     // Add your logic.
         // let regex2 = /[a-z0-9]+@[a-z]/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g ;
 //    let regex2 =  /^(?!.*[kpKP])[a-zA-Z]+@[]/g ;
-let regex2 = /example@example.io/g;
+// let regex2 = /example@example.io/g;
 // let regex2 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/ && /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // let regex2 = /^(([^<>()[\]\,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[.io\b]{2,})$/i ;
 // let regex2  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/  || /^\S+@\S+\.\S+$/ || /(io)\b/g ;
@@ -28,8 +28,10 @@ let regex2 = /example@example.io/g;
 
 // let regex2 =  /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i && /^[^\s@]+@[^\s@]+\.[^\s@]+$/ && /.io\b/g
 // let regex2 = /^[\w.][^@.]+@([\w-]+.)+[\w-]{2}(.io)?$/gm ;
-let res = regex2.test(email); 
-return res;
+let regex = /^[A-Za-z]+@[A-Za-z]+.io$/
+// let res = regex.test(email); 
+return(regex.test(email));
+// return res;
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
